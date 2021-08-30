@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>跑步</title>
+		<style>
+			body {
+				background-image: url(BG.png);
+				background-repeat: no-repeat;
+				margin: 0;
+				}
+			.marqee {
+					height: 500px;
+					width: 1920px;
+					margin: 580 0 0 0;
+					overflow: hidden; 
+					position: relative;
+				}
+
+			.marqee > ul {
+					height: 500px;
+					width: auto;
+					padding-left: 0;
+					display: flex;
+					list-style-type: none;
+					animation: marqee 15s linear infinite;
+					position: absolute;
+					margin: 0 auto;
+					}
+
+			@keyframes marqee {
+						0% {
+							left: 80%;
+							transform: translateX(0%);
+							}
+						50% {
+							left: 10%;
+							transform: translateX(-10%);
+							}
+						100% {
+							left: 80%;
+							transform: translateX(0%);
+							}
+					}
+		</style>
+	</head>
+	<body>
+		<div class="marqee">
+			<ul>
+				<img id=image src=Lily3.png height=500px>
+			</ul>
+		</div>
+		<!--<input type=button value="給我變" onclick=CH()>-->
+	</body>
+	<script>
+		var img = 0;
+		setInterval(CH,1000);
+		function Rand(max) {
+			return Math.floor(Math.random() * max);
+			}
+		function CH(){
+			if((img == 0) && (Rand(5) < 3)) return ;
+			if(img == 0){
+				console.log("img = " + img);
+				document.getElementById("image").src = "Lily2.png";
+				img = 1;
+				}
+			else {
+				console.log("img = " + img);
+				document.getElementById("image").src = "Lily3.png";
+				img = 0;
+				}
+		}
+	</script>
+</html>
